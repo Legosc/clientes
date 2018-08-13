@@ -1,6 +1,6 @@
 const request = require("request");
 let userModel = {};
-let apiUrl = "http://localhost/api.php";
+let apiUrl = "https://crlibre.vitechd.com/api.php";
 userModel.login =(userData,callback)=>{
     const postData = {
         "w": "users",
