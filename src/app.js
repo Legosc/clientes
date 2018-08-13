@@ -4,9 +4,11 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 //const jwt = require('jsonwebtoken');
 //const bcrypt = require('bcryptjs');
+
+
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
-app.set('port',process.env.PORT || 3000);
+app.set('port',process.env.PORT || 5000);
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -50,5 +52,5 @@ app.use(function(req, res, next) {
   });
   
 app.listen(app.get('port'),()=>{
-    console.log('server on port 3000');
+    console.log('server on port 5000');
 })
