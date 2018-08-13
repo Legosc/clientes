@@ -1,5 +1,3 @@
-const connection =require('./connection');
-
 let clientModel = {};
 clientModel.getClients = (callback)=>{
 if (connection){

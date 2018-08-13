@@ -1,6 +1,7 @@
 const Client = require('../models/client');
+const User = require('../models/user');
 module.exports = function(app){
-    app.get('/clients',(req, res)=>{
+    app.get('/clients',User.checkAuthentication,(req, res)=>{
         Client.getClients((err,data)=>{
             res.status(200).json(data);
         })

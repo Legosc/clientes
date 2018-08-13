@@ -6,4 +6,5 @@ connection= mysql.createConnection({
     database: 'clientes',
     port: 3306
 });
+
 module.exports = connection;
