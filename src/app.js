@@ -4,10 +4,9 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 //const jwt = require('jsonwebtoken');
 //const bcrypt = require('bcryptjs');
-
-
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
+
 app.set('port',process.env.PORT || 3000);
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
