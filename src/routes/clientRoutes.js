@@ -6,13 +6,13 @@ module.exports = function(app){
             res.status(200).json(data);
         })
     });
-    app.post('/clients',(req,res)=>{
+    app.post('/clients',User.checkAuthentication,(req,res)=>{
         const clientData ={
             nombre : req.body.nombre,
             tipo_identificacion : req.body.tipo_identificacion,
             numero_identificacion : req.body.numero_identificacion
         };
-        Client.insertClient(clientData,(err,data)=>{
+        Client.insertClient(clientData,User.checkAuthentication,(err,data)=>{
             console.log(data);
             if (data){
                 res.json({
@@ -28,14 +28,14 @@ module.exports = function(app){
             }
         })
     });
-    app.put('/clients/:id',(req,res)=>{
+    app.put('/clients/:id',User.checkAuthentication,(req,res)=>{
         const clientData ={
             id : req.params.id,
             nombre : req.body.nombre,
             tipo_identificacion : req.body.tipo_identificacion,
             numero_identificacion : req.body.numero_identificacion
         };
-        Client.updateCliente(clientData,(err,data)=>{
+        Client.updateCliente(clientData,User.checkAuthentication,(err,data)=>{
             if (data){
                 res.json(data);
             } else{
@@ -46,7 +46,7 @@ module.exports = function(app){
             }
         })
     });
-    app.delete('/clients/:id',(req,res)=>{
+    app.delete('/clients/:id',User.checkAuthentication,(req,res)=>{
         Client.deleteClient(req.params.id,(err,data)=>{
             if (data){
                 res.json(data);

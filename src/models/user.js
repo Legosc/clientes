@@ -110,6 +110,7 @@ userModel.checkAuthentication=(req,res,next)=>{
                 msg : err
             })
         }
+        
     
     });
 }
