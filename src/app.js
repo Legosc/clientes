@@ -31,7 +31,6 @@ const sessionStore = new MySQLStore({
     clearExpired: true,
     checkExpirationInterval: 900000,
     expiration: 86400000,
-    createDatabaseTable: true,
     connectionLimit: 1,
     endConnectionOnClose: true
 }/* session store options */, connection);

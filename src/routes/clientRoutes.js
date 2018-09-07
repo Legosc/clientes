@@ -13,7 +13,6 @@ module.exports = function(app){
             numero_identificacion : req.body.numero_identificacion
         };
         Client.insertClient(clientData,User.checkAuthentication,(err,data)=>{
-            console.log(data);
             if (data){
                 res.json({
                     success: true,
@@ -23,7 +22,7 @@ module.exports = function(app){
             }else {
              res.status(500).json({
                  success : false,
-                 msg : 'Error'
+                 msg : err
              })       
             }
         })
