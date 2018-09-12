@@ -40,7 +40,7 @@ module.exports = function(app){
             } else{
                 res.json({
                     success : false,
-                    msg : 'Error'
+                    msg : err
                 })
             }
         })
@@ -52,7 +52,7 @@ module.exports = function(app){
             } else {
                 res.json({
                     success: false,
-                    msg:'Error'
+                    msg: err
                 })
             }
         })

@@ -27,6 +27,7 @@ app.all('/*', function(req, res, next) {
 const connection =require('./models/connection');
 require('./routes/clientRoutes')(app);
 require('./routes/authRoutes')(app);
+require('./routes/menuRoutes')(app);
 const sessionStore = new MySQLStore({
     clearExpired: true,
     checkExpirationInterval: 900000,

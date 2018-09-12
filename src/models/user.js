@@ -91,11 +91,9 @@ userModel.checkAuthentication=(req,res,next)=>{
             'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' },
         formData: postData
     }
-    console.log(postOptions);
     request(postOptions,function(err,resApi,body){
         if(!err && res.statusCode ==200){
             err =HasErros(body);
-            console.log(body);
             if (err){
                 res.json({
                     success : false,
